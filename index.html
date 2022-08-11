@@ -16,8 +16,176 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background-image="./examples/assets/wine-red-lips.png">
+          <aside class="notes">
+            Let’s talk about the KISS principle which basically means keeping things as simple as possible to get better results.
+          </aside>
+          <h1 class="r-fit-text">KISS Principle</h1>
+          <h2>(Keep it simple stupid)</h2>
+        </section>
+        <section data-auto-animate>
+          <span>What does KISS stand for?</span>
+        </section>
+				<section data-auto-animate>
+          <span style="border-bottom: 3px solid rgb(253, 55, 131) ;">What does KISS stand for?</span>
+          <aside class="notes">KISS stands for Keep it simple stupid. Or formally, Keep It Simple and Straightforward.<br> It is a principle which states that a system should be designed in such a way that it’s easy to understand the internals later. As a result, making any changes will require minimum effort.
+            </aside>
+          <p style="font-size: 28px;" class="fragment fade-up">KISS stands for Keep it simple stupid.<br> Or formally, Keep It Simple and Straightforward.</p>
+          <p style="font-size: 28px;" class="fragment fade-up">It is a principle which states that a system should be designed in such a way that it’s easy to understand the internals later. As a result, making any changes will require minimum effort.</p>  
+        </section>
+        <section data-auto-animate>
+          <span>Where did this principle come from?</span>
+        </section>
+				<section data-auto-animate>
+          <span style="border-bottom: 3px solid rgb(253, 55, 131) ;">Where did this principle come from?</span>
+          <ul style="margin-top: 40px;">
+            <li style="font-size: 28px;"class="fragment fade-up">It is assumed to have originated by an aeronautical engineer named Kelly Johnson.</li>
+            <li style="margin-top: 20px; font-size: 28px;" class="fragment fade-up">While making a jet aircraft as a lead engineer, Kelly guided his designers to keep the system simple enough so that anyone with a primary mechanic’s training and basic tools can repair it in a combat situation.</li>
+            <li style="margin-top: 20px; font-size: 28px;" class="fragment fade-up">The principle is relevant and useful to any field that designs a system and, of course, for software engineers to design software.</li>
+          </ul>
+        </section>
+				<section>
+          <span style="border-bottom: 3px solid rgb(253, 55, 131) ;">What does KISS solve?</span>
+          <aside class="notes">
+            Now what the KISS principle is trying to solve is:<br>
+            Untangles Complex Code, therefore making code easier to read
+          </aside>
+          <ul style="margin-top: 40px;">
+            <li class="fragment fade-up">Untangles Complex Code, therefore making code easier to read</li>
+          </ul>
+          </section>
+				<section data-background-image="./examples/assets/pink.jpg">
+          <span style="text-shadow: -2px 2px 3px rgb(46, 43, 43);">A Common KISS Code Smell</span>
+          <aside class="notes">
+            A Common KISS Code Smell is when you’re reading code and
+             it’s either complicated or hard to follow, sometimes,
+              if you find yourself asking in your mind “What’s going on”,
+               “I can’t follow those code”, “I’m super confused with what I’m reading right now”,
+                then you have a good indicator that the KISS principle has been broken
+          </aside>
+          <ul style="margin-top: 40px;">
+            <li style="font-size: 32px; color: rgb(0, 0, 0);" class="fragment fade-up">Complicated Code, hard to follow (Ambiguous)</li>
+            <li style="margin-top: 40px; font-size: 32px;  color: rgb(0, 0, 0);" class="fragment fade-up">If you are asking yourself as a syntax guru “What’s going on”, “I can’t follow this code”, you are breaking KISS principle</li>
+          </ul>
+          </section>
+				<section data-background-color="rgb(247, 218, 200)">
+          <span style="position: absolute; left: 0; top: -60px;">Simple doesn't always mean short</span>
+          <aside class="notes">
+            Another mistake that is often made dealing with the KISS principle is that
+             people try to make code as short as possible. But the shortest solution is
+              rather seldom the easiest to read. Consider the following "Non-KISS" example:<br>
+              Sure, the first version is also readable, but it is considerably harder to do so.
+               Adding a few descriptive names, type hints, and splitting the line into multiple ones gets clearly easier to read.<br>
+               One of many common bad practices of developers is to create fancy and unreadable "oneliners".
+                There is absolutely no reason to do so. This will most certainly lead to someone,
+                 if not themself struggling to decipher it.
+          </aside>
+          <p style="font-size: 28px; text-align: start; line-height: 1.5;">Another mistake that is often made dealing with the KISS principle is that people try to make code as short as possible. But the shortest solution is rather seldom the easiest to read. Consider the following "Non-KISS" example:</p>
+          <pre><code data-trim data-noescape>
+            f = lambda x: 1 if x <= 1 else x * f(x - 1)
+          </code></pre>
+          <p style="font-size: 28px; text-align: start; margin-top: 40px;">Now look at this version:</p>
+          <pre><code data-trim data-noescape>
+            def faculty(number: int) -> int:
+              if number <= 1:
+                  return 1
+              else:
+                  return number * faculty(number - 1)
+          </code></pre>
+          <p style="font-size: 24px; text-align: start; margin-top: 40px;">One of many common bad practices of developers is to create fancy and unreadable "oneliners". There is absolutely no reason to do so. This will most certainly lead to someone, if not themself struggling to decipher it.</p>
+          </section>
+          <section>
+            <span style="border-bottom: 3px solid rgb(253, 55, 131) ;">Complex Code Solution</span>
+            <aside class="notes">
+              To solve the KISS principle one thing is to refactor your code.
+               How exactly do you refactor complex code, well there is no straight answer
+                / there is no correct answer. Basically you just play around with other ways of writing
+                 code until you get to a solution that is less complex.
+            </aside>
+            <ul style="margin-top: 60px;">
+              <li style="font-size: 28px;" class="fragment fade-up">Refactoring (not by putting it in a function, but by trying other alternative code)</li>
+              <li style="margin-top: 40px; font-size: 28px;" class="fragment fade-up">How do you refactor complex code?<br>
+                <span style="margin-top: 40px; font-size: 28px;">It depends, you have to iterate, play around with other ways of writing code until you get to a solution that is less complex.</span>
+             </li>
+            </ul>
+            </section>
+          <section data-background-image="./examples/assets/pink tile.jpg">
+            <span style="color: rgb(253, 55, 131); text-shadow: -1.5px 2px 2.5px rgb(69, 67, 67);">Getting Better at KISS...</span>
+            <aside class="notes">
+              Now again, to get good at the KISS principle considering its a vague principle,
+               it does take time and practice. Do not feel discouraged if you are not seeing
+                a better solution to the way you’re writing code.
+                 The more you’re write the easier you’ll spot it in time because over time
+                  you’re gonna say to yourself “Wow this is really hard to read/write how can I make this easier”
+            </aside>
+            <ul style="margin-top: 60px;">
+              <li style="font-size: 28px; color: rgb(39, 31, 31);" class="fragment fade-up">It takes time and practice</li>
+              <li style="margin-top: 40px; font-size: 28px; color: rgb(39, 31, 31);" class="fragment fade-up">The more you program, the better your intuition will get</li>
+              <li style="margin-top: 40px; font-size: 28px; color: rgb(39, 31, 31);" class="fragment fade-up">Do not feel discouraged if you are not seeing a better solution to the way you’re writing code</li>
+            </ul>
+            </section>
+            <section data-background-image="./examples/assets/lock.jpg">
+              <span style="color: rgb(255, 255, 255); text-shadow: 1px -2px 3px rgb(0, 0, 0);">There are hundreds of ways to apply KISS to design and programming, but here are a few ideas:</span>
+              <aside class="notes">
+                There are hundreds of ways to apply KISS to design and programming, but here are a few ideas:
+              </aside>
+            </section>
+            <section data-background-image="./examples/assets/pink tile.jpg">
+              <span style="color: rgb(253, 55, 131); text-shadow: -1.5px 2px 2.5px rgb(69, 67, 67);">Simplify and explain concepts</span>
+              <aside class="notes">
+                Try to code as simple as possible, unfold your concepts, name things properly and
+                 explain with comments where the code itself can't (Most of the time, it can and should!).
+              </aside>
+              <p style="font-size: 28px; color: rgb(0, 0, 0); text-align: start; line-height: 1.8; margin-top: 100px;" class="fragment fade-up">Try to code as simple as possible, unfold your concepts, name things properly and explain with comments where the code itself can't (Most of the time, it can and should!).
+              </p>
+              </section>
+            <section data-background-image="./examples/assets/pink tile.jpg">
+              <span style="color: rgb(253, 55, 131); text-shadow: -1.5px 2px 2.5px rgb(69, 67, 67);">Use descriptive names</span>
+              <aside class="notes">
+                As easy as this sounds, trying to find names that indicate
+                 something's true meaning can be very challenging. You may try this
+                  by telling someone a name and let them assume what they think that is.
+              </aside>
+              <p style="font-size: 28px; color: rgb(0, 0, 0); text-align: start; line-height: 1.8; margin-top: 100px;" class="fragment fade-up">As easy as this sounds, trying to find names that indicate something's true meaning can be very challenging. You may try this by telling someone a name and let them assume what they think that is.
+              </p>
+              </section>
+            <section data-background-image="./examples/assets/pink tile.jpg">
+              <span style="color: rgb(253, 55, 131); text-shadow: -1.5px 2px 2.5px rgb(69, 67, 67);">Deconstruct problems into smaller ones</span>
+              <aside class="notes">
+                Something that does real magic to the readability of your code is
+                 deconstructing the problem and solving just one simple one with each function.
+                  Try refactoring your code and solve a single problem at a time, but with a maximum of precision and readability.
+              </aside>
+              <p style="font-size: 28px; color: rgb(0, 0, 0); text-align: start; line-height: 1.8; margin-top: 60px;" class="fragment fade-up">Something that does real magic to the readability of your code is deconstructing the problem and solving just one simple one with each function. Try refactoring your code and solve a single problem at a time, but with a maximum of precision and readability.
+              </p>
+              </section>
+              <section data-background-image="./examples/assets/pink tile.jpg">
+                <span style="color: rgb(253, 55, 131); text-shadow: -1.5px 2px 2.5px rgb(69, 67, 67);">Learn more about Clean Code</span>
+                <aside class="notes">
+                  Many principles and ideas of clean code build upon the KISS principle.
+                   By applying those concepts, you may find it easier to identify the simplest solution.
+                </aside>
+                <p style="font-size: 28px; color: rgb(0, 0, 0); text-align: start; line-height: 1.8; margin-top: 100px;" class="fragment fade-up">Many principles and ideas of clean code build upon the KISS principle. By applying those concepts, you may find it easier to identify the simplest solution.
+                </p>
+                </section>
+                <section data-auto-animate data-background-image="./examples/assets/pink.jpg">
+                  <span style="color: rgb(255, 255, 255); text-shadow: 1px -2px 3px rgb(0, 0, 0); font-size: larger;">Motivation</span>
+                </section>
+                <section data-auto-animate data-background-image="./examples/assets/pink.jpg">
+                  <span style="color: rgb(253, 55, 131); text-shadow: 1px -2px 3px rgb(0, 0, 0); font-size: larger;">Motivation</span>
+                  <aside class="notes">
+                    Software development principles converge to a common purpose of writing
+                     healthy code that can be easily read, extend, and maintained.
+                      KISS explicitly encourages writing simple code. There are many pros to that. For example,
+                  </aside>
+                  <ul style="margin-top: 60px;">
+                    <li style="font-size: 28px; color: rgb(39, 31, 31);" class="fragment fade-up">If someone writes simple code, then other fellow coders can easily read and understand that. It makes everyone’s life easy.</li>
+                    <li style="margin-top: 40px; font-size: 28px; color: rgb(39, 31, 31);" class="fragment fade-up">The ability to express something plainly and simply reflects one’s own firm grasp over it. So, the more expressively one can code, the more proficient she/he is.<br> Such proficiency can be achieved by practice, experience, and most importantly, having the willingness.</li>
+                  </ul>
+                </section>
+                <section>
+                  <p>This is what the KISS principle is all about.<br> Thank you for your attention:)</p>
+                </section>
 			</div>
 		</div>
 
@@ -31,7 +199,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+        backgroundTransition: 'zoom',
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
